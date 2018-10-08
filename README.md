@@ -1,5 +1,7 @@
-# ceph-open-terrarium
-ceph-open-terrarium let deploy a ceph clust via terraform with saltstack or ansible or other config mgmt tool.
+<img src="Pictures/terrarium.jpg" width=250px height=250px>
+
+# Ceph-Open-Terrarium
+Ceph-Open-Terrarium lets deploy a ceph clust via terraform with saltstack or ansible or any other config mgmt tool.
 
 
 # Design-Architecture:

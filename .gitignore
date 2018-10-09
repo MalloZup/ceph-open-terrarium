@@ -7,3 +7,7 @@
 
 # .tfvars files
 *.tfvars
+
+# maintf
+
+main.tf

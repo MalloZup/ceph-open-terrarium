@@ -1,0 +1,102 @@
+provider "libvirt" {
+  uri = "qemu:///system"
+}
+
+// feel free to extend this module.
+
+module "os-images" {
+  source = "./terraform/libvirt/images"
+}
+
+
+// 0: for entreprise Linux, you need to implement a custom module images. 
+
+
+// 1: opensource Linux 
+
+// for the resource paramaters, have look here:
+// https://github.com/dmacvicar/terraform-provider-libvirt#website-docs 
+
+
+// ** opensuse423 example:
+
+// this example create 2 instances
+resource "libvirt_domain" "opensuse423" {
+  name = "ubuntu1804-${count.index}"
+  memory = "1024"
+  vcpu = 1
+  count = 2
+  cloudinit = "${module.os-images.libvirt_cloudinit_disk.cloudinit_id}"
+
+  cloudinit = "${module.os-images.cloudinit_id"
+  network_interface {
+    network_name = "default"
+  }
+ 
+  disk {
+       volume_id = "${module.os-images.opensuse_423_id"
+  }
+  // you can add more disks.. look at upstream doc
+
+}
+
+
+// ** centos7 example:
+resource "libvirt_domain" "centos7" {
+  name = "centos7"
+  memory = "1024"
+  vcpu = 1
+  count = 1 
+ cloudinit = "${libvirt_cloudinit_disk.commoninit.id}"
+
+  network_interface {
+    network_name = "default"
+  }
+
+  disk {
+       volume_id = "${module.os-images.centos_id}"
+  }
+  // you can add more disks.. look at upstream doc
+
+}
+
+
+// UBUNTU  1804 example:
+
+resource "libvirt_domain" "ubuntu1804" {
+  name = "ubuntu1804"
+  memory = "1024"
+  vcpu = 1
+
+ cloudinit = "${libvirt_cloudinit_disk.commoninit.id}"
+
+  network_interface {
+    network_name = "default"
+  }
+
+  # IMPORTANT
+  # Ubuntu can hang if an isa-serial is not present at boot time.
+  # If you find your CPU 100% and never is available this is why
+  console {
+    type        = "pty"
+    target_port = "0"
+    target_type = "serial"
+  }
+
+  console {
+      type        = "pty"
+      target_type = "virtio"
+      target_port = "1"
+  }
+
+  disk {
+       volume_id = "${module.os-images.ubuntu_id}"
+  }
+  // you can add more disks.. look at upstream doc
+
+  graphics {
+    type = "spice"
+    listen_type = "address"
+    autoport = true
+  }
+}

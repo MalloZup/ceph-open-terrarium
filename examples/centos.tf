@@ -10,11 +10,11 @@ module "cloudinit" {
   source = "./terraform/libvirt/images/cloudinit"
 }
 
-resource "libvirt_volume" "opensuse_disk" {
+resource "libvirt_volume" "centos_disk" {
   name = "opensuse423-${count.index}"
-  base_volume_id = "${module.centos.centos_id}"
+  base_volume_id = "${module.centos.centos_7_id}"
   pool = "default"
-  count = 2
+  count = 1
 }
 
 
@@ -23,7 +23,7 @@ resource "libvirt_domain" "centos7" {
   name = "centos7-${count.index}"
   memory = "1024"
   vcpu = 1
-  count = 2
+  count = 1
   cloudinit = "${module.cloudinit.cloudinit_id}"
   network_interface {
     network_name = "default"

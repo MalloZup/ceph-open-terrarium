@@ -1,0 +1,7 @@
+root_dir: .
+file_roots:
+  base:
+    - srv/salt
+
+color_theme: etc/salt/light_term_theme
+pki_dir: ./etc/salt/pki/master

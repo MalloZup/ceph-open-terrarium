@@ -1,0 +1,10 @@
+# CEPH servers
+# ad here ceph ips
+#
+# Replace the host with ips (terraform refresh, terraform show give you the ip)
+ ceph-server:
+   user: root
+   host: ceph-server
+ ceph-client-01:
+   user: root
+   host: ceph-client-01

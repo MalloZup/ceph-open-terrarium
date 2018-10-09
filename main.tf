@@ -2,25 +2,25 @@ provider "libvirt" {
   uri = "qemu:///system"
 }
 
+module "centos" {
+  source = "./terraform/libvirt/images/centos"
+}
+
 module "cloudinit" {
   source = "./terraform/libvirt/images/cloudinit"
 }
 
-module "opensuse" {
-  source = "./terraform/libvirt/images/opensuse/"
-}
-
-// we create 4 hosts 
-
-resource "libvirt_volume" "opensuse_disk" {
+resource "libvirt_volume" "centos_disk" {
   name = "opensuse423-${count.index}"
-  base_volume_id = "${module.opensuse.opensuse_423_id}"
+  base_volume_id = "${module.centos.centos_7_id}"
   pool = "default"
   count = 1
 }
 
-resource "libvirt_domain" "opensuse423" {
-  name = "opensuse423-${count.index}"
+
+// this example create 2 instances
+resource "libvirt_domain" "centos7" {
+  name = "centos7-${count.index}"
   memory = "1024"
   vcpu = 1
   count = 1
@@ -30,7 +30,6 @@ resource "libvirt_domain" "opensuse423" {
   }
 
   disk  {
-      volume_id = "${element(libvirt_volume.opensuse_disk.*.id, count.index)}"
+      volume_id = "${element(libvirt_volume.centos_disk.*.id, count.index)}"
    }
-
 }

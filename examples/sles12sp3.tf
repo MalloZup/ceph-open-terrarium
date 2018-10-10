@@ -16,25 +16,26 @@ resource "libvirt_volume" "sles12sp3_disk" {
   name = "sles12sp3-${count.index}"
   base_volume_id = "${module.sles.sles_12_sp3_id}"
   pool = "default"
-  count = 1
+  count = 2
 }
 
 resource "libvirt_domain" "sles12sp3" {
   name = "sles12sp3-${count.index}"
   memory = "1024"
   vcpu = 1
-  count = 1
+  count = 2
   cloudinit = "${module.cloudinit.cloudinit_id}"
   network_interface {
     network_name = "default"
+    wait_for_lease = true
   }
 
   disk  {
       volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
    }
 
-# IMPORTANT
-  # you need to pass the console because the image is expecting it
+  # IMPORTANT
+  # you need to pass the console because the image is expecting it as kernel-param.
   console {
     type        = "pty"
     target_port = "0"
@@ -53,5 +54,8 @@ resource "libvirt_domain" "sles12sp3" {
     autoport = true
 }
 
+provisioner "local-exec" {
+   command = "echo ${self.network_interface.0.addresses.0} > hosts.txt"
+}
 
 }

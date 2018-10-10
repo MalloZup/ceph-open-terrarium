@@ -1,9 +1,11 @@
 base:
 #  '*':
 #     - add generic states
-  cephserver:
-    - terminal-utils
-  cephclien01:
-    - terminal-utils
-  cephclient02:
-    - terminal-utils
+  master:
+    - salt-master
+  minion01:
+    - salt-minion
+  minion02:
+    - salt-minion
+  minion03:
+    - salt-minion

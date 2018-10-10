@@ -2,9 +2,9 @@
 
 # Extending images modules:
 
-When you add a new module,  take care to add examples, doc for it.
+When you add a new module, take care to add examples, doc for it.
 
-At moment we have only module for images and i think is the best way for it.
+At this moment, we only have module for images and I think is the best way for it.
 
 ## Create a new module for images:
 

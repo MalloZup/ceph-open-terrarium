@@ -2,13 +2,20 @@
 <img src=".doc/pictures/terrarium.jpg" width=250px height=250px>
 
 
-Ceph-open-terrarium lets deploy a ceph clust via terraform with saltstack or ansible or any other config mgmt tool.
+Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 
 
 # Design-Architecture:
 
 The architecture of project doesn't mix deployment with config management.
-So you will be able to do `terraform apply` for preparing your envinroment and use the config management of your choice for setup `ceph`
+So you will be able to do `terraform apply` for preparing your KVM instances and use the config management of your choice for setup `ceph`
+
+For explanation, remarks about the current Architecture design, have a look here [architecture](ARCHITECTURE.md)
+
+
+# Contributing:
+
+Take a look on [contributing](CONTRIBUTING.md)
 
 ### Deploy:
 

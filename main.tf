@@ -6,21 +6,21 @@ module "cloudinit" {
   source = "./terraform/libvirt/images/cloudinit"
 }
 
-module "sles" {
-  source = "./terraform/libvirt/images/sles/"
+module "opensuse" {
+  source = "./terraform/libvirt/images/opensuse/"
 }
 
 // we create 4 hosts 
 
-resource "libvirt_volume" "sles12sp3_disk" {
-  name = "sles12sp3-${count.index}"
-  base_volume_id = "${module.sles.sles_12_sp3_id}"
+resource "libvirt_volume" "opensuse_disk" {
+  name = "opensuse423-${count.index}"
+  base_volume_id = "${module.opensuse.opensuse_423_id}"
   pool = "default"
   count = 1
 }
 
-resource "libvirt_domain" "sles12sp3" {
-  name = "sles12sp3-${count.index}"
+resource "libvirt_domain" "opensuse423" {
+  name = "opensuse423-${count.index}"
   memory = "1024"
   vcpu = 1
   count = 1
@@ -30,11 +30,9 @@ resource "libvirt_domain" "sles12sp3" {
   }
 
   disk  {
-      volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
+      volume_id = "${element(libvirt_volume.opensuse_disk.*.id, count.index)}"
    }
-
-# IMPORTANT
-  # you need to pass the console because the image is expecting it
+   
   console {
     type        = "pty"
     target_port = "0"
@@ -51,7 +49,7 @@ resource "libvirt_domain" "sles12sp3" {
     type = "spice"
     listen_type = "address"
     autoport = true
-}
+  }
 
 
 }

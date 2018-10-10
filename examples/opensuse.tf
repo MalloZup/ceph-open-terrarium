@@ -32,5 +32,24 @@ resource "libvirt_domain" "opensuse423" {
   disk  {
       volume_id = "${element(libvirt_volume.opensuse_disk.*.id, count.index)}"
    }
+   
+  console {
+    type        = "pty"
+    target_port = "0"
+    target_type = "serial"
+  }
+
+  console {
+      type        = "pty"
+      target_type = "virtio"
+      target_port = "1"
+  }
+
+  graphics {
+    type = "spice"
+    listen_type = "address"
+    autoport = true
+  }
+
 
 }

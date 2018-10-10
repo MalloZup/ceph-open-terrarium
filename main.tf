@@ -33,4 +33,25 @@ resource "libvirt_domain" "sles12sp3" {
       volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
    }
 
+# IMPORTANT
+  # you need to pass the console because the image is expecting it
+  console {
+    type        = "pty"
+    target_port = "0"
+    target_type = "serial"
+  }
+
+  console {
+      type        = "pty"
+      target_type = "virtio"
+      target_port = "1"
+  }
+
+  graphics {
+    type = "spice"
+    listen_type = "address"
+    autoport = true
+}
+
+
 }

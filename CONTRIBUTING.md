@@ -4,7 +4,7 @@
 
 When you add a new module, take care to add examples, doc for it.
 
-At this moment, we only have module for images and I think is the best way for it.
+At this moment, we only have module for images and I think this is the best way for it.
 
 ## Create a new module for images:
 

@@ -5,6 +5,6 @@
  ceph-server:
    user: root
    host: ceph-server
- ceph-client-01:
+ ceph-client-1:
    user: root
    host: ceph-client-01

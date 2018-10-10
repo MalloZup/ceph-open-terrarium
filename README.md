@@ -3,6 +3,12 @@
 
 Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 
+# Install:
+
+You need to install terraform  https://www.terraform.io/ and https://github.com/dmacvicar/terraform-provider-libvirt.
+
+For the config management you will need to have saltstack or ansible installed on the machine executing the states/playbook.
+
 # Examples:
 
 Have a look at `examples` dir for how to use `ceph-open-terrarium`.

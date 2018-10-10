@@ -2,17 +2,18 @@
 
 # Extending images modules:
 
-When you add a new module, take care to add examples, doc for it.
+When you add a new module, take care to add examples and documentation for it.
 
 At this moment, we only have module for images and I think this is the best way for it.
 
+
 ## Create a new module for images:
 
-Except of `cloudinit` module, the images are ordered by family:
+Except for the `cloudinit` module, the images are ordered by family:
 
 `centos  cloudinit  opensuse  sles  ubuntu`.
 
-So if you want to add a new family, add a dir with same structure of modules.
+So if you want to add a new family, add a directory with same structure of modules.
 
 ### Conventions:
 
@@ -29,4 +30,4 @@ output "centos_7_id" {
 }
 ```
 
-For os names convention is: `OS_NAME` +`_` + `MAJOR_VERSION` + `+ `_`+ `SERVICE_PACK/MinorVersion`
+For os names, the convention is: `OS_NAME` +`_` + `MAJOR_VERSION` + `+ `_`+ `SERVICE_PACK/MinorVersion`

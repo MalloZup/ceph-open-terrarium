@@ -16,14 +16,14 @@ resource "libvirt_volume" "sles12sp3_disk" {
   name = "sles12sp3-${count.index}"
   base_volume_id = "${module.sles.sles_12_sp3_id}"
   pool = "default"
-  count = 2
+  count = 4
 }
 
 resource "libvirt_domain" "sles12sp3" {
   name = "sles12sp3-${count.index}"
   memory = "1024"
   vcpu = 1
-  count = 2
+  count = 4 
   cloudinit = "${module.cloudinit.cloudinit_id}"
   network_interface {
     network_name = "default"
@@ -55,7 +55,7 @@ resource "libvirt_domain" "sles12sp3" {
 }
 
 provisioner "local-exec" {
-   command = "echo ${self.network_interface.0.addresses.0} > hosts.txt"
+   command = "echo ${self.network_interface.0.addresses.0} >> hosts.txt"
 }
 
 }

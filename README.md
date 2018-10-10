@@ -14,10 +14,6 @@ So you will be able to do `terraform apply` for preparing your KVM instances and
 
 For explanation, remarks about the current Architecture design, have a look here [architecture](ARCHITECTURE.md)
 
-# Contributing:
-
-Take a look on [contributing](CONTRIBUTING.md)
-
 ### Deploy:
 
 Deployment will focus on libvirt-kvm.
@@ -36,3 +32,8 @@ Ceph related
 # Roadmap:
 
 Have a look on the roadmap board under github Projects.
+
+# Contributing:
+
+Take a look on [contributing](CONTRIBUTING.md)
+

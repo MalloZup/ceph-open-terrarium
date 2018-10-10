@@ -16,10 +16,18 @@ https://cloudinit.readthedocs.io/en/latest/
 
 ## Design decisions:
 
-Terraform apply will just creating your instances on KVM.
+You need to do 2 **separate** operations: 
 
+1) `terraform apply` for deploy
+2) and salt/ansible provisioning. 
+
+
+Terraform apply will just creating your instances on KVM.
 You need to provisioning them via salt or ansible.
 
+You can still wrap this 2 operation in your customs CI scripts if you wish.
+
+Separating this 2 operatin will bring more benifits for maintaining the whole stack.
 
 ## Terraform v12:
 

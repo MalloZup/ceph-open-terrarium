@@ -1,9 +1,11 @@
 # Ceph-open-terrarium
 <img src=".doc/pictures/terrarium.jpg" width=250px height=250px>
 
-
 Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 
+# Examples:
+
+Have a look at `examples` dir for how to use `ceph-open-terrarium`.
 
 # Design-Architecture:
 
@@ -11,7 +13,6 @@ The architecture of project doesn't mix deployment with config management.
 So you will be able to do `terraform apply` for preparing your KVM instances and use the config management of your choice for setup `ceph`
 
 For explanation, remarks about the current Architecture design, have a look here [architecture](ARCHITECTURE.md)
-
 
 # Contributing:
 
@@ -34,19 +35,4 @@ Ceph related
 
 # Roadmap:
 
-#### Currently under development. Feel free to grab issues for helping! 
-
-
-### Terraform
-
-0) Create terraform module structures.
-1) Create ubuntu/opensuse/fedora etc support images
-
-## Saltstack
-
-Setup minimal config and use deepsea
-
-## Ansible
-
-Reuse as much as possible the ansible-ceph
-
+Have a look on the roadmap board under github Projects.

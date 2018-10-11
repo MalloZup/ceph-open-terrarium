@@ -10,3 +10,4 @@
 
 # saltstack:
 salt/var/cache/*
+salt/var/log*

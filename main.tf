@@ -23,31 +23,34 @@ resource "libvirt_volume" "osd_disks" {
 // we create 4 hosts 
 
 resource "libvirt_volume" "sles12sp3_disk" {
-  name = "sles12sp3-${count.index}"
+  name           = "sles12sp3-${count.index}"
   base_volume_id = "${module.sles.sles_12_sp3_id}"
-  pool = "default"
-  count = 4
+  pool           = "default"
+  count          = 4
 }
 
 resource "libvirt_domain" "sles12sp3" {
-  name = "sles12sp3-${count.index}"
-  memory = "1024"
-  vcpu = 1
-  count = 4 
+  name      = "sles12sp3-${count.index}"
+  memory    = "1024"
+  vcpu      = 1
+  count     = 4
   cloudinit = "${module.cloudinit.cloudinit_id}"
+
   network_interface {
-    network_name = "default"
+    network_name   = "default"
     wait_for_lease = true
   }
+
   // OS image
-  disk  {
-      volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
-   }
+  disk {
+    volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
+  }
 
   // DISK
-   disk { 
-      volume_id = "${element(libvirt_volume.osd_disks.*.id, count.index)}"
+  disk {
+    volume_id = "${element(libvirt_volume.osd_disks.*.id, count.index)}"
   }
+
   # IMPORTANT
   # you need to pass the console because the image is expecting it as kernel-param.
   console {
@@ -57,19 +60,18 @@ resource "libvirt_domain" "sles12sp3" {
   }
 
   console {
-      type        = "pty"
-      target_type = "virtio"
-      target_port = "1"
+    type        = "pty"
+    target_type = "virtio"
+    target_port = "1"
   }
 
   graphics {
-    type = "spice"
+    type        = "spice"
     listen_type = "address"
-    autoport = true
-}
+    autoport    = true
+  }
 
-provisioner "local-exec" {
-   command = "echo ${self.network_interface.0.addresses.0} >> hosts.txt"
-}
-
+  provisioner "local-exec" {
+    command = "echo ${self.network_interface.0.addresses.0} >> hosts.txt"
+  }
 }

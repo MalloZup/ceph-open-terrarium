@@ -13,25 +13,26 @@ module "ubuntu" {
 // we create 4 hosts 
 
 resource "libvirt_volume" "ubuntu_disk" {
-  name = "ubuntu1804-${count.index}"
+  name           = "ubuntu1804-${count.index}"
   base_volume_id = "${module.ubuntu.ubuntu_1804_id}"
-  pool = "default"
-  count = 1
+  pool           = "default"
+  count          = 1
 }
 
 resource "libvirt_domain" "ubuntu1804" {
-  name = "ubuntu1804-${count.index}"
-  memory = "1024"
-  vcpu = 1
-  count = 1
+  name      = "ubuntu1804-${count.index}"
+  memory    = "1024"
+  vcpu      = 1
+  count     = 1
   cloudinit = "${module.cloudinit.cloudinit_id}"
+
   network_interface {
     network_name = "default"
   }
 
-  disk  {
-      volume_id = "${element(libvirt_volume.ubuntu_disk.*.id, count.index)}"
-   }
+  disk {
+    volume_id = "${element(libvirt_volume.ubuntu_disk.*.id, count.index)}"
+  }
 
   # IMPORTANT
   # Ubuntu can hang if an isa-serial is not present at boot time.
@@ -43,15 +44,14 @@ resource "libvirt_domain" "ubuntu1804" {
   }
 
   console {
-      type        = "pty"
-      target_type = "virtio"
-      target_port = "1"
+    type        = "pty"
+    target_type = "virtio"
+    target_port = "1"
   }
 
   graphics {
-    type = "spice"
+    type        = "spice"
     listen_type = "address"
-    autoport = true
+    autoport    = true
   }
-
 }

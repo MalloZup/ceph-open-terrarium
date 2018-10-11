@@ -10,14 +10,20 @@ module "sles" {
   source = "./terraform/libvirt/images/sles/"
 }
 
+// NOTE: at moment the count variable need to be the same everywhere.
+
 // volume for ceph 1 disk pro domain
+
+variable "count" {
+  default = 4
+}
 
 resource "libvirt_volume" "osd_disks" {
   pool   = "default"
   format = "raw"
   name   = "osd_${count.index}_data.raw"
   size   = 100000000
-  count  = "4"
+  count  = "${var.count}"
 }
 
 // we create 4 hosts 
@@ -26,7 +32,7 @@ resource "libvirt_volume" "sles12sp3_disk" {
   name           = "sles12sp3-${count.index}"
   base_volume_id = "${module.sles.sles_12_sp3_id}"
   pool           = "default"
-  count          = 4
+  count          = "${var.count}"
 }
 
 resource "libvirt_domain" "sles12sp3" {

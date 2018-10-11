@@ -17,7 +17,10 @@ For more info look at : https://github.com/SUSE/DeepSea
 salt-ssh '*' state.highstate -i
 ```
 
-# For matchin specif minion
+# Deepsea:
+
+
+#### Usefull commands
 
 ```bash
 salt-ssh '<MINION_ID>' state.highstate test=True

@@ -22,7 +22,7 @@ So you will be able to do `terraform apply` for preparing your KVM instances and
 
 For explanation, remarks about the current Architecture design, have a look here [architecture](ARCHITECTURE.md)
 
-### Deploy:
+## Deploy:
 
 Take an example.tf file and run `terraform apply`
 
@@ -31,14 +31,14 @@ ceph-open-terrarium will use https://github.com/dmacvicar/terraform-provider-lib
 
 ( Due to the modular nature of terraform, we might add terraform for cloud or other providers but for the first releases is out of scope.)
 
-### Config Management:
+## Config Management:
 
-#### The saltstack way:
+### The saltstack way:
 
 Follow instruction here:
 https://github.com/MalloZup/ceph-open-terrarium/tree/master/salt
 
-#### The ansible way:
+### The ansible way:
 
 WIP
 

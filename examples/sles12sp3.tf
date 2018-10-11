@@ -10,17 +10,15 @@ module "sles" {
   source = "./terraform/libvirt/images/sles/"
 }
 
-// volume for ceph 3 disk pro domain
+// volume for ceph 1 disk pro domain
 
 resource "libvirt_volume" "osd_disks" {
   pool   = "default"
   format = "raw"
   name   = "osd_${count.index}_data.raw"
   size   = 100000000
-  count  = "3"
+  count  = "4"
 }
-
-
 
 // we create 4 hosts 
 

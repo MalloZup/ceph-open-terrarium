@@ -1,11 +1,17 @@
 base:
-#  '*':
-#     - add generic states
+  '*':
+     - repos
   master:
     - salt-master
-  minion01:
+  minion1:
     - salt-minion
-  minion02:
+  minion2:
     - salt-minion
-  minion03:
+  minion3:
+    - salt-minion
+  minion4:
+    - salt-minion
+  minion5:
+    - salt-minion
+  minion6:
     - salt-minion

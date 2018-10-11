@@ -7,3 +7,6 @@
 
 # .tfvars files
 *.tfvars
+
+# saltstack:
+salt/var/cache/*

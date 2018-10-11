@@ -1,5 +1,0 @@
-[SLE-11-SP3-x86_64-Update]
-name=SLE-11-SP3-x86_64-Update
-type=rpm-md
-enabled=1
-baseurl=http://{{ grains.get("package-mirror") | default("nu.novell.com", true) }}/repo/$RCE/SLES11-SP3-Updates/sle-11-x86_64/

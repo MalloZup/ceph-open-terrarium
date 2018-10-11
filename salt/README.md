@@ -9,6 +9,16 @@ For more info look at : https://github.com/SUSE/DeepSea
 
 `zypper -n in salt-ssh python2-salt`
 
+
+# Install ceph prerequisites:
+
+```shell
+./create_roster.py
+salt-ssh '*' state.highstate
+```
+
+# For matchin specif minion
+
 ```bash
 salt-ssh '<MINION_ID>' state.highstate test=True
 salt-ssh '<MINION_ID>' state.highstate

@@ -18,8 +18,8 @@ def writeSaltMasterEntry(rosterFile, iphost):
     rosterFile.write("   host: " + str(iphost) + '\n')
 
 
-def writeSaltMinionEntry(rosterFile, iphost):
-    rosterFile.write(" salt-minion:" + '\n')
+def writeSaltMinionEntry(rosterFile, iphost, minionNumber):
+    rosterFile.write(" salt-minion"  + str(minionNumber)  + ': \n')
     rosterFile.write("   user: root" + '\n')
     rosterFile.write("   host: " + str(iphost) + '\n')
 
@@ -36,5 +36,7 @@ if not ips:
 with open(roster_file, 'a') as roster:
     # take first as master
     writeSaltMasterEntry(roster, ips.pop())
+    minionNumber = 1
     for ip in ips:
-        writeSaltMinionEntry(roster, ip)
+        writeSaltMinionEntry(roster, ip, minionNumber)
+        minionNumber += 1

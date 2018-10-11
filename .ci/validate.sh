@@ -17,7 +17,7 @@ do
 	cp $file ../main.tf
 	cd ..
 	terraform init
-	terraform validate
+#	terraform validate
 	cd examples
   fi
 done

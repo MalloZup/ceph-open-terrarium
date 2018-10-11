@@ -3,6 +3,7 @@ base:
      - repos
   master:
     - salt-master
+    - deepsea
   minion1:
     - salt-minion
   minion2:

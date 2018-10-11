@@ -14,7 +14,7 @@ For more info look at : https://github.com/SUSE/DeepSea
 
 ```shell
 ./create_roster.py
-salt-ssh '*' state.highstate
+salt-ssh '*' state.highstate -i
 ```
 
 # For matchin specif minion

@@ -3,7 +3,7 @@
 # this simple script take the hosts.txt files and convert the ip dinamically to salt-ssh roster.
 # this is a workaround until https://github.com/MalloZup/ceph-open-terrarium/issues/7
 # there is no much need to make it better since it will removed.
-import os
+import os, sys
 roster_file = "etc/salt/roster"
 terraformHostsFile = "../hosts.txt"
 
@@ -24,7 +24,7 @@ def writeSaltMinionEntry(rosterFile, iphost, minionNumber):
     rosterFile.write("   host: " + str(iphost) + '\n')
 
 # host.txt was deleted just exit
-if os.path.exists(terraformHostsFile):
+if not os.path.exists(terraformHostsFile):
   print("host.txt doesn't exist anymore.")
   sys.exit(1)
 

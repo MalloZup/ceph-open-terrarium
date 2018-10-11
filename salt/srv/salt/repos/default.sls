@@ -128,7 +128,3 @@ allow_vendor_changes:
 
 
 {% endif %}
-
-# HACK: work around #10852
-{{ sls }}_nop:
-  test.nop: []

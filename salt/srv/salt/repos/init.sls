@@ -10,7 +10,3 @@ refresh_repos:
       - sls: repos.default
 
 {% endif %}
-
-# HACK: work around #10852
-{{ sls }}_nop:
-  test.nop: []

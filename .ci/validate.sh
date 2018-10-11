@@ -18,7 +18,6 @@ do
 	cd ..
 	terraform init
 	terraform validate
-	terraform plan
 	cd examples
   fi
 done

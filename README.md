@@ -45,3 +45,9 @@ Have a look on the roadmap board under github Projects.
 
 Take a look on [contributing](CONTRIBUTING.md)
 
+# Authors:
+
+- [Dario Maiocchi](https://github.com/MalloZup)
+
+See also the list of [contributors](https://github.com/MalloZup/ceph-open-terrarium/graphs/contributors) who participated in this project.
+

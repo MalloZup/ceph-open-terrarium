@@ -1,3 +1,6 @@
+include:
+  - sles.repos
+
 salt_master:
   pkg.installed:
     - name: salt-master

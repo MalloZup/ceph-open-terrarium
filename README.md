@@ -1,6 +1,8 @@
 # Ceph-open-terrarium
 <img src=".doc/pictures/terrarium.jpg" width=250px height=250px>
 
+[![Code of Conduct][coc-badge]][coc]
+
 Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 
 # Install:
@@ -51,3 +53,7 @@ Take a look on [contributing](CONTRIBUTING.md)
 
 See also the list of [contributors](https://github.com/MalloZup/ceph-open-terrarium/graphs/contributors) who participated in this project.
 
+
+[coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=for-the-badge
+
+[coc]:https://github.com/MalloZup/ceph-open-terrarium/blob/master/CODE_OF_CONDUCT.md "Contributor Covenant Code of Conduct"

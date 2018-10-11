@@ -6,7 +6,7 @@ sudo: required
 language: bash
 
 before_install:
-  - apt-get install -y qemu libvirt-bin libvirt-dev
+  - sudo apt-get install -y qemu libvirt-bin libvirt-dev
   - wget https://releases.hashicorp.com/terraform/${tf_version}/terraform_${tf_version}_linux_amd64.zip -O /tmp/terraform.zip
   - sudo unzip -d /usr/local/bin/ /tmp/terraform.zip
   - wget https://github.com/dmacvicar/terraform-provider-libvirt/releases/download/v0.5.0/terraform-provider-libvirt-0.5.0.Ubuntu_18.04.amd64.tar.gz -O /tmp/terraform-libvirt.tar.gz

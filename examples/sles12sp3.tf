@@ -10,6 +10,18 @@ module "sles" {
   source = "./terraform/libvirt/images/sles/"
 }
 
+// volume for ceph 3 disk pro domain
+
+resource "libvirt_volume" "osd_disks" {
+  pool   = "default"
+  format = "raw"
+  name   = "osd_${count.index}_data.raw"
+  size   = 100000000
+  count  = "3"
+}
+
+
+
 // we create 4 hosts 
 
 resource "libvirt_volume" "sles12sp3_disk" {
@@ -29,11 +41,15 @@ resource "libvirt_domain" "sles12sp3" {
     network_name = "default"
     wait_for_lease = true
   }
-
+  // OS image
   disk  {
       volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
    }
 
+  // DISK
+   disk { 
+      volume_id = "${element(libvirt_volume.osd_disks.*.id, count.index)}"
+  }
   # IMPORTANT
   # you need to pass the console because the image is expecting it as kernel-param.
   console {

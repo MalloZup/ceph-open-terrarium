@@ -24,7 +24,7 @@ For explanation, remarks about the current Architecture design, have a look here
 
 ### Deploy:
 
-For saltstack and ansible you can use the ssh-key in dir `ssh_key`. This is passed by cloudinit.
+Take an example.tf file and run `terraform apply`
 
 Deployment will focus on libvirt-kvm.
 ceph-open-terrarium will use https://github.com/dmacvicar/terraform-provider-libvirt  for deploying via terraform and cloudinit.
@@ -33,9 +33,17 @@ ceph-open-terrarium will use https://github.com/dmacvicar/terraform-provider-lib
 
 ### Config Management:
 
-In roadmap i plan to give support for saltstack and ansible
+#### The saltstack way:
 
-Ceph related
+Follow instruction here:
+https://github.com/MalloZup/ceph-open-terrarium/tree/master/salt
+
+#### The ansible way:
+
+WIP
+
+##### Ceph related
+
 1) https://github.com/ceph/ceph-ansible
 2) https://github.com/SUSE/DeepSea
 

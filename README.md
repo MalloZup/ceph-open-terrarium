@@ -1,8 +1,8 @@
 # Ceph-open-terrarium
 <img src=".doc/pictures/terrarium.jpg" width=250px height=250px>
 
-[![Code of Conduct][coc-badge]][coc]
-[![Build Status](https://img.shields.io/travis-ci/MalloZup/ceph-open-terrarium.svg?branch=master&style=for-the-badge)](https://travis-ci.org/MalloZup/ceph-open-terrarium)
+[![Code of Conduct][coc-badge]][coc]&nbsp; &nbsp;
+[![Build Status](https://travis-ci.org/MalloZup/ceph-open-terrarium.svg?branch=master)](https://travis-ci.org/MalloZup/ceph-open-terrarium)
 
 Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 

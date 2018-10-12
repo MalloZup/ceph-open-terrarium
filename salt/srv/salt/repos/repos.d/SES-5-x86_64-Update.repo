@@ -1,6 +1,5 @@
-SES5]
-name=SES5
+[SES5-update]
+name=SES5-update
 type=rpm-md
-enabled=1
 baseurl=http://download.suse.de/ibs/SUSE:/SLE-12-SP3:/Update:/Products:/SES5/standard/
-priority=96
+enabled=1

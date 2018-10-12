@@ -6,6 +6,7 @@ salt-master:
     - name: salt-master
     - require:
       - cmd: refresh_repos
+
 salt-master-service:
   service.running:
     - name: salt-master

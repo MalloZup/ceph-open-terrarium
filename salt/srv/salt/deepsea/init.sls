@@ -5,20 +5,25 @@ ses5_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SES-5-x86_64-Pool.repo
     - source: salt://repos/repos.d/SES-5-x86_64-Pool.repo
+    - require:
+      - cmd: repos.refresh_repos
+  
 
 ses5_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SES-5-x86_64-Update.repo
     - source: salt://repos/repos.d/SES-5-x86_64-Update.repo
-
+    - require:
+      - cmd: repos.refresh_repos
+  
 deepsea_packages:
   pkg.latest:
     - pkgs:
       - deepsea
       - gptfdisk
     - require:
-      - sls: ses5_pool_repo
-      - sls: ses5_update_repo
+      - file: ses5_pool_repo
+      - file: ses5_update_repo
 
 create_proposal_folder:
   file.directory:

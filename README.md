@@ -51,6 +51,23 @@ WIP
 
 Have a look on the roadmap board under github Projects.
 
+# Supported Operating Systems
+
+| Operating System             | Version    | Supported          | Not Supported Yet |
+| ---------------------------- | :--------: | :----------------: | :---------------: |
+| Arch                         | 2018.10.01 |                    | :no_entry:        |
+| CentOS                       | 7.1        | :heavy_check_mark: |                   |
+| Debian                       |            |                    | :no_entry:        |
+| Fedora                       |            |                    | :no_entry:        |
+| Gentoo                       |            |                    | :no_entry:        |
+| Linux Mint                   |            |                    | :no_entry:        |
+| openSUSE                     | Leap 42.3  | :heavy_check_mark: |                   |
+| Oracle Linux                 |            |                    | :no_entry:        |
+| Red Hat Enterprise Linux     |            |                    | :no_entry:        |
+| Slackware                    |            |                    | :no_entry:        |
+| SUSE Linux Enterprise Server | 12 SP3     | :heavy_check_mark: |                   |
+| Ubuntu                       | 18.04      | :heavy_check_mark: |                   |
+
 # Contributing:
 
 Take a look on [contributing](CONTRIBUTING.md)

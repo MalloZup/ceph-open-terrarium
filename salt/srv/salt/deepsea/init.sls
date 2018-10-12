@@ -5,22 +5,18 @@ ses5_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SES-5-x86_64-Pool.repo
     - source: salt://repos/repos.d/SES-5-x86_64-Pool.repo
-    - require:
-      - sls: default
 
 ses5_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SES-5-x86_64-Update.repo
     - source: salt://repos/repos.d/SES-5-x86_64-Update.repo
-    - require:
-      - sls: default
 
 deepsea_packages:
   pkg.latest:
     - pkgs:
       - deepsea
       - gptfdisk
-   - require:
+    - require:
       - sls: ses5_pool_repo
       - sls: ses5_update_repo
 
@@ -31,7 +27,7 @@ create_proposal_folder:
     - group: salt
     - makedirs: True
 
-deepsea-policy:
+deepsea_policy:
   service.disabled:
     - name: apparmor
   file.managed:

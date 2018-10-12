@@ -1,11 +1,12 @@
 include:
-  - sles.repos
-
-salt_master:
-  pkg.installed:
-    - name: salt-master
+  - repos
 
 salt-master:
+  pkg.installed:
+    - name: salt-master
+    - require:
+      - cmd: refresh_repos
+salt-master-service:
   service.running:
     - name: salt-master
     - enable: True
@@ -19,4 +20,4 @@ salt_master_configuration:
     - name: /etc/salt/master
     - source: salt://salt-master/master.conf
     - require:
-	- pkg: salt-master
+       - pkg: salt-master

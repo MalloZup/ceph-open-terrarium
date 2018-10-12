@@ -1,8 +1,11 @@
 # Ceph-open-terrarium
 <img src=".doc/pictures/terrarium.jpg" width=250px height=250px>
 
-[![Code of Conduct][coc-badge]][coc]&nbsp; &nbsp;
+
 [![Build Status](https://travis-ci.org/MalloZup/ceph-open-terrarium.svg?branch=master)](https://travis-ci.org/MalloZup/ceph-open-terrarium)
+[![Gitter chat](https://badges.gitter.im/ceph-open-terrarium/Lobby.png)](https://gitter.im/ceph-open-terrarium/Lobby)
+[![Code of Conduct][coc-badge]][coc]
+
 
 Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 
@@ -57,17 +60,15 @@ Have a look on the roadmap board under github Projects.
 | Operating System             | Version    | Supported          | Not Supported Yet |
 | ---------------------------- | :--------: | :----------------: | :---------------: |
 | Arch                         | 2018.10.01 |                    | :no_entry:        |
+| openSUSE                     | Leap 42.3  | :heavy_check_mark: |                   |
+| Ubuntu                       | 18.04      | :heavy_check_mark: |                   |
 | CentOS                       | 7.1        | :heavy_check_mark: |                   |
 | Debian                       |            |                    | :no_entry:        |
 | Fedora                       |            |                    | :no_entry:        |
 | Gentoo                       |            |                    | :no_entry:        |
 | Linux Mint                   |            |                    | :no_entry:        |
-| openSUSE                     | Leap 42.3  | :heavy_check_mark: |                   |
-| Oracle Linux                 |            |                    | :no_entry:        |
 | Red Hat Enterprise Linux     |            |                    | :no_entry:        |
-| Slackware                    |            |                    | :no_entry:        |
 | SUSE Linux Enterprise Server | 12 SP3     | :heavy_check_mark: |                   |
-| Ubuntu                       | 18.04      | :heavy_check_mark: |                   |
 
 # Contributing:
 

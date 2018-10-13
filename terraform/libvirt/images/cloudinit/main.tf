@@ -7,6 +7,7 @@ data "template_file" "user_data" {
 }
 
 resource "libvirt_cloudinit_disk" "cloudinit" {
-  name      = "cloudinit.iso"
+  name      = "${var.unique_name}"
   user_data = "${data.template_file.user_data.rendered}"
+  pool      = "${var.pool}"
 }

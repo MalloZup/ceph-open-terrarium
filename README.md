@@ -55,9 +55,13 @@ WIP
 
 Have a look on the roadmap board under github Projects.
 
-# Supported Operating Systems
+# Supported/Avaible Operating Systems
 
-| Operating System             | Version    | Supported          | Not Supported Yet |
+You can use following OS-images.
+Note: We are providing the OS-images, feel free to fix/expand the terraform files and relative modules.
+
+
+| Operating System             | Version    |  Avaible          | Not Supported Yet |
 | ---------------------------- | :--------: | :----------------: | :---------------: |
 | Arch                         | 2018.10.01 |                    | :no_entry:        |
 | openSUSE                     | Leap 42.3  | :heavy_check_mark: |                   |

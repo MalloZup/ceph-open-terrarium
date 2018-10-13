@@ -4,22 +4,22 @@ provider "libvirt" {
 
 module "cloudinit" {
   source      = "./terraform/libvirt/images/cloudinit"
-  unique_name = "archlinux-cloudinit.iso"
+  unique_name = "fedora-cloudinit.iso"
 }
 
-module "archlinux" {
-  source = "./terraform/libvirt/images/archlinux/"
+module "fedora" {
+  source = "./terraform/libvirt/images/fedora/"
 }
 
-resource "libvirt_volume" "archlinux_disk" {
-  name           = "archlinux-${count.index}"
+resource "libvirt_volume" "fedora_28_disk" {
+  name           = "fedora28-${count.index}"
   base_volume_id = "${module.archlinux.archlinux_id}"
   pool           = "default"
   count          = 1
 }
 
-resource "libvirt_domain" "archlinux" {
-  name      = "archlinux-${count.index}"
+resource "libvirt_domain" "fedora_28" {
+  name      = "fedora28-${count.index}"
   memory    = "1024"
   vcpu      = 1
   count     = 1
@@ -30,7 +30,7 @@ resource "libvirt_domain" "archlinux" {
   }
 
   disk {
-    volume_id = "${element(libvirt_volume.archlinux_disk.*.id, count.index)}"
+    volume_id = "${element(libvirt_volume.fedora_28_disk.*.id, count.index)}"
   }
 
   console {

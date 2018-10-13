@@ -4,7 +4,7 @@ provider "libvirt" {
 
 module "cloudinit" {
   source      = "./terraform/libvirt/images/cloudinit"
-  unique_name = "debian9.iso"
+  unique_name = "archlinux-cloudinit.iso"
 }
 
 module "archlinux" {

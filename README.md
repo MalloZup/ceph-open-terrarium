@@ -61,16 +61,15 @@ You can use following OS-images.
 Note: We are providing the OS-images, feel free to fix/expand the terraform files and relative modules.
 
 
-| Operating System             | Version    |  Avaible          | Not Supported Yet |
+| Operating System             | Version    |  Avaible           | Not Supported Yet |
 | ---------------------------- | :--------: | :----------------: | :---------------: |
-| Arch                         | 2018.10.01 |                    | :no_entry:        |
+| Arch                         | latest     | :heavy_check_mark: |                   |
 | openSUSE                     | Leap 42.3  | :heavy_check_mark: |                   |
 | Ubuntu                       | 18.04      | :heavy_check_mark: |                   |
 | CentOS                       | 7.1        | :heavy_check_mark: |                   |
-| Debian                       |            |                    | :no_entry:        |
-| Fedora                       |            |                    | :no_entry:        |
+| Debian                       | 9          | :heavy_check_mark: |                   |
+| Fedora                       | 28         | :heavy_check_mark: |                   |
 | Gentoo                       |            |                    | :no_entry:        |
-| Linux Mint                   |            |                    | :no_entry:        |
 | Red Hat Enterprise Linux     |            |                    | :no_entry:        |
 | SUSE Linux Enterprise Server | 12 SP3     | :heavy_check_mark: |                   |
 

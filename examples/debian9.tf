@@ -11,7 +11,6 @@ module "debian" {
   source = "./terraform/libvirt/images/debian/"
 }
 
-// we create 4 hosts 
 
 resource "libvirt_volume" "debian_9_disk" {
   name           = "debian9-${count.index}"

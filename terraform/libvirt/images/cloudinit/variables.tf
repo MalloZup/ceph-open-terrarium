@@ -7,4 +7,3 @@ variable "unique_name" {
   description = "unique name for the cloudint image"
   default     = "cloudinit.iso"
 }
-

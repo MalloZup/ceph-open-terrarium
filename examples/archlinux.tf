@@ -3,14 +3,13 @@ provider "libvirt" {
 }
 
 module "cloudinit" {
-  source = "./terraform/libvirt/images/cloudinit"
+  source      = "./terraform/libvirt/images/cloudinit"
   unique_name = "debian9.iso"
 }
 
 module "archlinux" {
   source = "./terraform/libvirt/images/archlinux/"
 }
-
 
 resource "libvirt_volume" "archlinux_disk" {
   name           = "archlinux-${count.index}"

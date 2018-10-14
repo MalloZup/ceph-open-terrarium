@@ -32,4 +32,8 @@ resource "libvirt_domain" "centos7" {
   disk {
     volume_id = "${element(libvirt_volume.centos_disk.*.id, count.index)}"
   }
+
+  provisioner "local-exec" {
+    command = "echo ${self.network_interface.0.addresses.0} >> hosts_centos7.txt"
+  }
 }

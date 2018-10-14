@@ -13,7 +13,7 @@ module "fedora" {
 
 resource "libvirt_volume" "fedora_28_disk" {
   name           = "fedora28-${count.index}"
-  base_volume_id = "${module.archlinux.archlinux_id}"
+  base_volume_id = "${module.fedora.fedora_28_id}"
   pool           = "default"
   count          = 1
 }

@@ -41,15 +41,14 @@ ceph-open-terrarium will use https://github.com/dmacvicar/terraform-provider-lib
 
 Follow instruction here:
 https://github.com/MalloZup/ceph-open-terrarium/tree/master/salt
+This will then setup the requirements for deepSea.
+
+https://github.com/SUSE/DeepSea
 
 ### The ansible way:
 
-WIP
-
-##### Ceph related
-
-1) https://github.com/ceph/ceph-ansible
-2) https://github.com/SUSE/DeepSea
+Once you have the IPs adress of the virtual hosts, you can use ansible.
+For ansible, have a look at upstream doc https://github.com/ceph/ceph-ansible
 
 # Roadmap:
 

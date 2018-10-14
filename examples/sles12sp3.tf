@@ -4,15 +4,13 @@ provider "libvirt" {
 
 module "cloudinit" {
   source = "./terraform/libvirt/images/cloudinit"
+  unique_name = "sles12sp3_jeos_cloudinit.iso"
+  cloudinit_filename = "cloud_init_resize.cfg"
 }
 
 module "sles" {
   source = "./terraform/libvirt/images/sles/"
 }
-
-// NOTE: at moment the count variable need to be the same everywhere.
-
-// volume for ceph 1 disk pro domain
 
 variable "count" {
   default = 4
@@ -26,13 +24,12 @@ resource "libvirt_volume" "osd_disks" {
   count  = "${var.count}"
 }
 
-// we create 4 hosts 
-
 resource "libvirt_volume" "sles12sp3_disk" {
   name           = "sles12sp3-${count.index}"
   base_volume_id = "${module.sles.sles_12_sp3_id}"
   pool           = "default"
   count          = "${var.count}"
+  size           = 5361393152
 }
 
 resource "libvirt_domain" "sles12sp3" {

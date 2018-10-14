@@ -7,3 +7,8 @@ variable "unique_name" {
   description = "unique name for the cloudint image"
   default     = "cloudinit.iso"
 }
+
+variable "cloudinit_filename" {
+  description = "filename of cloudinit"
+  default     = "cloud_init_default.cfg"
+}

@@ -70,6 +70,7 @@ Note: We are providing the OS-images, feel free to fix/expand the terraform file
 | Fedora                       | 28         | :heavy_check_mark: |                   |
 | Gentoo                       |            |                    | :no_entry:        |
 | Red Hat Enterprise Linux     |            |                    | :no_entry:        |
+| Deepin                       |            |                    | :no_entry:        |
 | SUSE Linux Enterprise Server | 12 SP3     | :heavy_check_mark: |                   |
 
 # Contributing:

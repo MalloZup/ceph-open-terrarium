@@ -1,12 +1,12 @@
  salt-master:
    user: root
-   host: 192.168.122.4
- salt-minion1: 
+   host: 192.168.122.251
+ salt-minion1:
    user: root
-   host: 192.168.122.47
- salt-minion2: 
+   host: 192.168.122.107
+ salt-minion2:
    user: root
-   host: 192.168.122.129
- salt-minion3: 
+   host: 192.168.122.106
+ salt-minion3:
    user: root
-   host: 192.168.122.60
+   host: 192.168.122.230

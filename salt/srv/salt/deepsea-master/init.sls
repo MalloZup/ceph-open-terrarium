@@ -34,7 +34,7 @@ deepsea_policy:
     - name: apparmor
   file.managed:
     - name: /srv/pillar/ceph/proposals/policy.cfg
-    - source: salt://deepsea/policy.cfg
+    - source: salt://deepsea-master/policy.cfg
     - require:
       - file: create_proposal_folder
 
@@ -59,6 +59,6 @@ salt-master-service:
 salt_master_configuration:
   file.managed:
     - name: /etc/salt/master
-    - source: salt://salt-master/master.conf
+    - source: salt://deepsea-master/master.conf
     - require:
        - pkg: salt-master

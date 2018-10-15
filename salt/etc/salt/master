@@ -3,5 +3,9 @@ file_roots:
   base:
     - srv/salt
 
+pillar_roots:
+   base:
+     - srv/pillar 
+
 color_theme: etc/salt/light_term_theme
 pki_dir: ./etc/salt/pki/master

@@ -13,4 +13,10 @@ salt-minion-service:
     - require:
       - pkg: salt-minion-pkg
 
-# TODO: add grains for getting master ip and send the boostrap against this ip
+master_configuration:
+  file.managed:
+    - name: /etc/salt/minion.d/master.conf
+    - contents: |
+        master: {{ pillar['deepsea-master-ip']}}
+    - require:
+      - pkg: salt-minion

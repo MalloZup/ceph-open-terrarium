@@ -84,7 +84,7 @@ def main():
     master_ip = ips.pop()
     # created dynamic pillar
 
-    with open(DEFAULT_PILLAR_FILE, "a") as pillar:
+    with open(DEFAULT_PILLAR_FILE, "w") as pillar:
         write_pillar(pillar, master_ip)
     # create dynamic roster
     with open(DEFAULT_ROSTER_FILE, "a") as roster:

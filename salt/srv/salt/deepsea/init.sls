@@ -21,7 +21,6 @@ deepsea_packages:
     - require:
       - file: ses5_pool_repo
       - file: ses5_update_repo
-      - cmd:  refresh_repos
 
 create_proposal_folder:
   file.directory:

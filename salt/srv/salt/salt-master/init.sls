@@ -4,7 +4,6 @@ include:
 salt-master:
   pkg.installed:
     - name: salt-master
-    - cmd: repos.refresh_repos
 
 salt-master-service:
   service.running:

@@ -4,7 +4,6 @@ include:
 salt-minion-pkg:
   pkg.installed:
     - name: salt-minion
-    - cmd: repos.refresh_repos
 
 salt-minion-service:
   service.running:

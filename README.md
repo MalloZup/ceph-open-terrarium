@@ -71,6 +71,8 @@ Note: We are providing the OS-images, feel free to fix/expand the terraform file
 | Debian                       | 9          | :heavy_check_mark: |                   |
 | Fedora                       | 28         | :heavy_check_mark: |                   |
 | Gentoo                       |            |                    | :no_entry:        |
+| Red Hat Enterprise Linux     |            |                    | :no_entry:        |
+| SUSE Linux Enterprise Server | 12 SP3     | :heavy_check_mark: |                   |
 
 There are Linux Entreprise System however this images are not open to community.
 # Contributing:

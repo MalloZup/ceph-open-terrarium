@@ -3,8 +3,8 @@ provider "libvirt" {
 }
 
 module "cloudinit" {
-  source = "./terraform/libvirt/images/cloudinit"
-  unique_name = "sles12sp3_jeos_cloudinit.iso"
+  source             = "./terraform/libvirt/images/cloudinit"
+  unique_name        = "sles12sp3_jeos_cloudinit.iso"
   cloudinit_filename = "cloud_init_resize.cfg"
 }
 

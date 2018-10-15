@@ -4,7 +4,6 @@ include:
 salt-minion-pkg:
   pkg.installed:
     - name: salt-minion
-    - cmd: repos.refresh_repos
 
 salt-minion-service:
   service.running:
@@ -13,3 +12,5 @@ salt-minion-service:
     - running: True
     - require:
       - pkg: salt-minion-pkg
+
+# TODO: add grains for getting master ip and send the boostrap against this ip

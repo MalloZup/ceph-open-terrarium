@@ -21,7 +21,6 @@ deepsea_packages:
     - require:
       - file: ses5_pool_repo
       - file: ses5_update_repo
-      - cmd:  refresh_repos
 
 create_proposal_folder:
   file.directory:
@@ -35,6 +34,31 @@ deepsea_policy:
     - name: apparmor
   file.managed:
     - name: /srv/pillar/ceph/proposals/policy.cfg
-    - source: salt://deepsea/policy.cfg
+    - source: salt://deepsea-master/policy.cfg
     - require:
       - file: create_proposal_folder
+
+# salt-master configuration
+
+salt-master:
+  pkg.installed:
+    - name: salt-master
+    - require:
+      - file: ses5_pool_repo
+      - file: ses5_update_repo
+
+salt-master-service:
+  service.running:
+    - name: salt-master
+    - enable: True
+    - running: True
+    - require:
+      - pkg: salt-master
+
+
+salt_master_configuration:
+  file.managed:
+    - name: /etc/salt/master
+    - source: salt://deepsea-master/master.conf
+    - require:
+       - pkg: salt-master

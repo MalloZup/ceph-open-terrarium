@@ -3,7 +3,7 @@ include:
 
 {% if grains['os'] == 'SUSE' %}
 
-refresh_repos:
+refresh_openSUSE-repos:
   cmd.run:
     - name: zypper --non-interactive --gpg-auto-import-keys refresh
     - require:

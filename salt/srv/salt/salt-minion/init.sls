@@ -12,3 +12,5 @@ salt-minion-service:
     - running: True
     - require:
       - pkg: salt-minion-pkg
+
+# TODO: add grains for getting master ip and send the boostrap against this ip

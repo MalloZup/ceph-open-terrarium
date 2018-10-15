@@ -1,7 +1,6 @@
 base:
   salt-master:
-    - salt-master
-    - deepsea
+    - deepsea-master
     - repos
   salt-minion1:
     - salt-minion

@@ -8,6 +8,7 @@ import os
 import sys
 
 DEFAULT_ROSTER_FILE = "etc/salt/roster"
+DEFAULT_PILLAR_FILE = "srv/pillar/master_ip.sls"
 TERRAFORM_HOSTS_FILE = "../hosts.txt"
 
 
@@ -49,6 +50,15 @@ def write_salt_minion_entry(roster_file, host, minion_num):
     roster_file.write("   host: {}\n".format(host))
 
 
+def write_pillar(pillar_file, master_ip):
+    """
+    Writes salt-master ip to pillar so that minion can write their minion.conf
+    file with the salt-master ip
+    """
+
+    pillar_file.write("deepsea-master-ip: {}\n".format(master_ip))
+
+
 def main():
     """
     Attempts to transcribe the contents of a host.txt file to a
@@ -71,10 +81,15 @@ def main():
         print "hosts.txt empty"
         sys.exit(1)
 
+    master_ip = ips.pop()
+    # created dynamic pillar
+
+    with open(DEFAULT_PILLAR_FILE, "a") as pillar:
+        write_pillar(pillar, master_ip)
     # create dynamic roster
     with open(DEFAULT_ROSTER_FILE, "a") as roster:
         # take first as master
-        write_salt_master_entry(roster, ips.pop())
+        write_salt_master_entry(roster, master_ip)
         for minion_number, host in enumerate(ips):
             write_salt_minion_entry(roster, host, minion_number + 1)
 

@@ -13,7 +13,7 @@ For more info look at : https://github.com/SUSE/DeepSea
 # Install ceph prerequisites:
 
 ```shell
-./create_roster.py
+create_roster_and_pillar.py
 salt-ssh '*' state.highstate -i
 ```
 

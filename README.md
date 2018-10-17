@@ -16,7 +16,7 @@ ___
 - [Deploy](#deploy)
 - [Config Management](#config_management)
 - [Contributing](#contributing)
-- [Opensource Distros Supported](#avaible_operating_systems)
+- [Opensource Distros Supported](#Opensource distros avaible)
 ___
 
 # Motivation:
@@ -73,7 +73,7 @@ https://github.com/MalloZup/ceph-open-terrarium/tree/master/salt
 Once you have the IPs adress of the virtual hosts, you can use ansible.
 For ansible, have a look at upstream doc https://github.com/ceph/ceph-ansible
 
-# Avaible Operating Systems
+# Opensource distros avaible
 
 You can use following OS-images.
 Note: We are providing the OS-images, feel free to fix/expand the terraform files and relative modules.

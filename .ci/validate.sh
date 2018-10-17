@@ -9,13 +9,13 @@ cd ..
 if [ `terraform fmt | wc -c` -ne 0 ]; then echo "terraform files need be formatted! run terraform fmt!"; exit 1; fi
 cd .ci/
 
-cd ../examples
+cd ../examples/libvirt
 for file in "."/*
 do
   if [ ! -d "$file" ]; then
 	echo $file
-	cp $file ../main.tf
-	cd ..
+	cp $file ../../main.tf
+	cd ../..
 	terraform init
 #	terraform validate
 	cd examples

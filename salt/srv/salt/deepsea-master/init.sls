@@ -3,15 +3,21 @@ include:
 
 ses5_pool_repo:
   file.managed:
-    - name: /etc/zypp/repos.d/SES-5-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SES-5-x86_64-Pool.repo
+    - name: /etc/zypp/repos.d/ses-5-x86_64-pool.repo
+    - source: salt://repos/repos.d/ses-5-x86_64-pool.repo
   
 
 ses5_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SES-5-x86_64-Update.repo
     - source: salt://repos/repos.d/SES-5-x86_64-Update.repo
- 
+
+master_minions_pillar:
+  file.managed:
+    - name: /srv/pillar/ceph/deepsea_minions.sls,
+    - source: salt://deepsea-master/deepsea_minion.sls
+    - require:
+      - pkg: deepsea_packages
 
 deepsea_packages:
   pkg.latest:

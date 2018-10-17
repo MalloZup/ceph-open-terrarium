@@ -1,0 +1,1 @@
+deepsea_minions: '*'

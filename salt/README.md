@@ -2,7 +2,6 @@
 
 This dir will contain mainly salt-ssh roster and salt-states for setting up the salt cluster needed by Deepsea.
 
-For more info look at : https://github.com/SUSE/DeepSea
 
 
 # install and running:
@@ -23,12 +22,25 @@ You need to accept the key with
 salt-ssh 'salt-master' cmd.run 'salt-key -A -y' -i
 ```
 
+After this you should be able to run deepsea.
+
 # Deepsea:
 
+For infos about Deepsea have a look at upstream doc:
 
-#### Usefull commands
+ https://github.com/SUSE/DeepSea
+
+
+### Usefull commands
+Here some example basic what you can do with deepsea:
+
+get the adress ip of salt-master with:
+```bash
+ salt-ssh -H
+```
+
+Then login on the `salt-master` and run
 
 ```bash
-salt-ssh '<MINION_ID>' state.highstate test=True
-salt-ssh '<MINION_ID>' state.highstate
+salt-run state.orch ceph.stage.0
 ```

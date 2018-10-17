@@ -16,7 +16,7 @@
 - [Deploy](#deploy)
 - [Config Management](#config_management)
 - [Contributing](#contributing)
-- [Which Distros are avaible](#Avaible Operating Systems)
+- [Opensource Distros Supported](#avaible_operating_systems)
 
 # Motivation
 
@@ -58,9 +58,7 @@ ceph-open-terrarium will use https://github.com/dmacvicar/terraform-provider-lib
 
 Follow instruction here:
 https://github.com/MalloZup/ceph-open-terrarium/tree/master/salt
-This will then setup the requirements for deepSea.
 
-https://github.com/SUSE/DeepSea
 
 ### The ansible way:
 

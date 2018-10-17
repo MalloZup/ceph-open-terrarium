@@ -17,6 +17,12 @@ create_roster_and_pillar.py
 salt-ssh '*' state.highstate -i
 ```
 
+You need to accept the key with
+
+```bash
+salt-ssh 'salt-master' cmd.run 'salt-key -A -y' -i
+```
+
 # Deepsea:
 
 

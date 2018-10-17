@@ -1,4 +1,6 @@
 base:
+  '*':
+   - networking-prerequisites
   salt-master:
     - deepsea-master
     - repos
@@ -18,5 +20,17 @@ base:
     - salt-minion
     - repos
   salt-minion6:
+    - salt-minion
+    - repos
+  salt-minion7:
+    - salt-minion
+    - repos
+  salt-minion8:
+    - salt-minion
+    - repos
+  salt-minion9:
+    - salt-minion
+    - repos
+  salt-minion10:
     - salt-minion
     - repos

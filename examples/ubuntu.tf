@@ -4,6 +4,7 @@ provider "libvirt" {
 
 module "cloudinit" {
   source = "./terraform/libvirt/images/cloudinit"
+  unique_name        = "ubuntu_cloudinit.iso"
 }
 
 module "ubuntu" {

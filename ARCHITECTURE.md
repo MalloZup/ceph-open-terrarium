@@ -22,8 +22,9 @@ You need to do 2 **separate** operations:
 2) and salt/ansible provisioning. 
 
 
-Terraform apply will just create your instances on KVM.
-You need to provision them via salt or ansible.
+Terraform apply will just create your instances on KVM and also create DISK/Volumes on demand.
+
+You will need to provision your infrastructure via salt or ansible.
 
 You can still wrap these two operations in your customs CI scripts if you wish.
 
@@ -40,17 +41,17 @@ For this reason I prefer to use plain hcl and redundant code, instead of having 
 
 The golden rule at the moment for modules is to add them only for OS images.
 
-# About the cloudinit module:
-
-The cloudinit module will generate the same iso for your host.
-
-At the moment if you have 3 different main.tf on the same hosts, you will have an error because it will create the same iso with the  same name three times ( if you include the cloudinit module).
-
-It is up to the user to include it or not (they could also find another design).
-
 # About modules:
 
 I chose to implement only the images as modules and let the others implement the rest of the logic with HCL language.
 
 In this way we can rest the flexibility for changes in the terraform api upstream and the libvirt-plugin.
+
+# SSH-KEYS:
+
+The cloudinit inject the public key present in `ssh_key` directory.
+
+This ssh-key is also used by saltstack and can be used by other tools.
+
+Use only that key.
 

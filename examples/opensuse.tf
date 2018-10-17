@@ -4,6 +4,7 @@ provider "libvirt" {
 
 module "cloudinit" {
   source = "./terraform/libvirt/images/cloudinit"
+  unique_name        = "opensuse_jeos_cloudinit.iso"
 }
 
 module "opensuse" {

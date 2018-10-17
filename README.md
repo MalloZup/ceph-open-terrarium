@@ -5,6 +5,7 @@
 [![Build Status](https://travis-ci.org/MalloZup/ceph-open-terrarium.svg?branch=master)](https://travis-ci.org/MalloZup/ceph-open-terrarium)
 [![Gitter chat](https://badges.gitter.im/ceph-open-terrarium/Lobby.png)](https://gitter.im/ceph-open-terrarium/Lobby)
 [![Code of Conduct][coc-badge]][coc]
+[Roadmap:](https://github.com/dmacvicar/terraform-provider-libvirt/projects/1)
 ___
 
 ## Table of Content
@@ -96,9 +97,6 @@ There are Linux Entreprise System however this images are not open to community.
 
 Take a look on [contributing](CONTRIBUTING.md)
 
-# Roadmap:
-
-Have a look on the roadmap board under github Projects.
 
 # Authors:
 

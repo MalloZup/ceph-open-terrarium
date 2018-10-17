@@ -50,7 +50,7 @@ Then you will use the config management of your choice for setup `ceph` (saltsta
 
 For explanation, remarks about the current Architecture design, have a look here [architecture](ARCHITECTURE.md)
 
-## Deploy:
+# Deploy:
 
 Take an example.tf file and run `terraform apply`
 
@@ -59,7 +59,7 @@ ceph-open-terrarium will use https://github.com/dmacvicar/terraform-provider-lib
 
 ( Due to the modular nature of terraform, we might add terraform for cloud or other providers but for the first releases is out of scope.)
 
-## Config Management:
+# Config Management:
 
 ### The saltstack way:
 
@@ -71,10 +71,6 @@ https://github.com/MalloZup/ceph-open-terrarium/tree/master/salt
 
 Once you have the IPs adress of the virtual hosts, you can use ansible.
 For ansible, have a look at upstream doc https://github.com/ceph/ceph-ansible
-
-# Roadmap:
-
-Have a look on the roadmap board under github Projects.
 
 # Avaible Operating Systems
 
@@ -96,17 +92,19 @@ Note: We are providing the OS-images, feel free to fix/expand the terraform file
 
 There are Linux Entreprise System however this images are not open to community.
 
-
-
 # Contributing:
 
 Take a look on [contributing](CONTRIBUTING.md)
+
+# Roadmap:
+
+Have a look on the roadmap board under github Projects.
 
 # Authors:
 
 - [Dario Maiocchi](https://github.com/MalloZup)
 
-See also the list of [contributors](https://github.com/MalloZup/ceph-open-terrarium/graphs/contributors) who participated in this project.
+A big  thank you to all  [contributors](https://github.com/MalloZup/ceph-open-terrarium/graphs/contributors) who participated in this project.
 
 
 [coc-badge]: https://img.shields.io/badge/code%20of-conduct-ff69b4.svg?style=for-the-badge

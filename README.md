@@ -5,7 +5,7 @@
 [![Build Status](https://travis-ci.org/MalloZup/ceph-open-terrarium.svg?branch=master)](https://travis-ci.org/MalloZup/ceph-open-terrarium)
 [![Gitter chat](https://badges.gitter.im/ceph-open-terrarium/Lobby.png)](https://gitter.im/ceph-open-terrarium/Lobby)
 [![Code of Conduct][coc-badge]][coc]
-
+___
 
 ## Table of Content
 
@@ -16,7 +16,7 @@
 - [Config Management](#config_management)
 - [Contributing](#contributing)
 - [Opensource Distros Supported](#avaible_operating_systems)
-
+___
 
 Deploy a ceph cluster with terraform `backends` and provisioning with config management tools.
 

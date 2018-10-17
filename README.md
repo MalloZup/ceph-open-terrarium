@@ -17,7 +17,7 @@ For the config management you will need to have saltstack or ansible installed o
 
 # Examples:
 
-Have a look at `examples` dir for how to use `ceph-open-terrarium`.
+Have a look at [examples](https://github.com/MalloZup/ceph-open-terrarium/tree/master/examples)
 
 # Design-Architecture:
 

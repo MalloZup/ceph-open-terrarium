@@ -12,8 +12,9 @@ module "sles" {
   source = "./terraform/libvirt/images/sles/"
 }
 
+// 4 mininon and 1 salt-master
 variable "count" {
-  default = 4
+  default = 5
 }
 
 resource "libvirt_volume" "osd_disks" {
@@ -55,7 +56,7 @@ resource "libvirt_domain" "sles12sp3" {
   }
 
   # IMPORTANT
-  # you need to pass the console because the image is expecting it as kernel-param.
+  # you need to pass the console because the image JESO is expecting it as kernel-param.
   console {
     type        = "pty"
     target_port = "0"

@@ -4,7 +4,7 @@
 
 [![Build Status](https://travis-ci.org/MalloZup/ceph-open-terrarium.svg?branch=master)](https://travis-ci.org/MalloZup/ceph-open-terrarium)
 [![Gitter chat](https://badges.gitter.im/ceph-open-terrarium/Lobby.png)](https://gitter.im/ceph-open-terrarium/Lobby)
-[![Code of Conduct][coc-badge]][coc]
+[![Code of Conduct](https://img.shields.io/badge/code%20of-conduct-lightgrey.svg)][coc]
 [![Roadmap](https://img.shields.io/badge/Roadmap-%20-brightgreen.svg)](https://github.com/MalloZup/ceph-open-terrarium/projects/1)
 ___
 

@@ -30,7 +30,22 @@ You can still wrap these two operations in your customs CI scripts if you wish.
 
 Separating this 2 operations will have more benefits in maintaining the whole stack.
 
-## Terraform v12:
+## Running it in CI:
+
+The workflow for running it in CI , would be that you create or expand a terraform file in the `example` directory.
+
+With you CI workflow you will then clone this github repo and setup the `example` as your `main.tf`.
+
+This is at moment the current idea of ci, we can also create a sub-directory which would contain  different `examples/production` examples.
+
+
+
+## Terraform Hcl and modules:
+
+since HCL is a language, i choosed to let the people free to code their infrastructure and don't create to much modules which will shallow the readability.
+
+
+### Terraform v12:
 
 https://www.hashicorp.com/blog/terraform-0-1-2-preview
 
@@ -41,7 +56,7 @@ For this reason I prefer to use plain hcl and redundant code, instead of having 
 
 The golden rule at the moment for modules is to add them only for OS images.
 
-# About modules:
+## About modules:
 
 I chose to implement only the images as modules and let the others implement the rest of the logic with HCL language.
 

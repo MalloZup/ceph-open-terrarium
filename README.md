@@ -11,12 +11,14 @@ ___
 
 - [Install](#install)
 - [Examples](#examples)
-- [Design Architecture of Project](#design-Architecture)
+- [Design Architecture of Project](#design-architecture)
 - [Deploy](#deploy)
 - [Config Management](#config_management)
 - [Contributing](#contributing)
 - [Opensource Distros Supported](#avaible_operating_systems)
 ___
+
+# Motivation:
 
 Deploy a ceph cluster with terraform `backends` and provisioning with config management tools.
 

@@ -7,7 +7,7 @@ module "centos" {
 }
 
 module "cloudinit" {
-  source = "./terraform/libvirt/images/cloudinit"
+  source      = "./terraform/libvirt/images/cloudinit"
   unique_name = "cento7_jeos_cloudinit.iso"
 }
 

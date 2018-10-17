@@ -18,8 +18,7 @@
 - [Opensource Distros Supported](#avaible_operating_systems)
 
 
-With Ceph-open-terrarium you deploy a ceph cluster with terraform `backends` and provisioning with config management tools.
-Once you deployed you can provision your infrastructure with saltstack or ansible.
+Deploy a ceph cluster with terraform `backends` and provisioning with config management tools.
 
 Currently we support following terraform `backends`:
 *  `libvirt` terraform-plugin. (https://github.com/dmacvicar/terraform-provider-libvirt)
@@ -94,6 +93,8 @@ Note: We are providing the OS-images, feel free to fix/expand the terraform file
 | Gentoo                       |            |                    | :no_entry:        |
 
 There are Linux Entreprise System however this images are not open to community.
+
+
 
 # Contributing:
 

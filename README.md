@@ -14,9 +14,9 @@ ___
 - [Examples](#examples)
 - [Design Architecture of Project](#design-architecture)
 - [Deploy](#deploy)
-- [Config Management](#config_management)
+- [Config Management](#config-management)
 - [Contributing](#contributing)
-- [Opensource Distros Supported](#opensource_distros_avaible)
+- [Opensource Distros Supported](#opensource-distros-avaible)
 ___
 
 # Motivation:

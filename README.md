@@ -21,8 +21,11 @@ Have a look at [examples](https://github.com/MalloZup/ceph-open-terrarium/tree/m
 
 # Design-Architecture:
 
-The architecture of project doesn't mix deployment with config management.
-So you will be able to do `terraform apply` for preparing your KVM instances and use the config management of your choice for setup `ceph`
+This project doesn't mix deployment with config management.
+
+So you will be able to do `terraform apply` for preparing your KVM instances.
+
+Then you will use the config management of your choice for setup `ceph` (saltstack/ansible)
 
 For explanation, remarks about the current Architecture design, have a look here [architecture](ARCHITECTURE.md)
 

@@ -30,4 +30,4 @@ output "centos_7_id" {
 }
 ```
 
-For os names, the convention is: `OS_NAME` +`_` + `MAJOR_VERSION` + `+ `_`+ `SERVICE_PACK/MinorVersion`
+For os names, the convention is: `OS_NAME` +`_` + `MAJOR_VERSION` + `+ `_`+ `SERVICE_PACK/MinorVersion

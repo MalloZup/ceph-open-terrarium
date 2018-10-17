@@ -19,11 +19,15 @@
 
 
 With Ceph-open-terrarium you deploy a ceph cluster with terraform `backends` and provisioning with config management tools.
+Once you deployed you can provision your infrastructure with saltstack or ansible.
 
 Currently we support following terraform `backends`:
 *  `libvirt` terraform-plugin. (https://github.com/dmacvicar/terraform-provider-libvirt)
 
-Once you deployed you can provision your infrastructure with saltstack or ansible.
+Currently we support following provisioning tools:
+
+* saltstack.
+* ansible.
 
 # Install:
 

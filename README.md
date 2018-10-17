@@ -16,7 +16,7 @@ ___
 - [Deploy](#deploy)
 - [Config Management](#config_management)
 - [Contributing](#contributing)
-- [Opensource Distros Supported](#Opensource distros avaible)
+- [Opensource Distros Supported](#opensource_distros_avaible)
 ___
 
 # Motivation:

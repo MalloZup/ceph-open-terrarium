@@ -7,6 +7,20 @@
 [![Code of Conduct][coc-badge]][coc]
 
 
+## Table of Content
+
+- [Motivation](#motivation)
+- [Install](#install)
+- [Examples](#examples)
+- [Design Architecture of Project](#design-Architecture)
+- [Deploy](#deploy)
+- [Config Management](#config_management)
+- [Contributing](#contributing)
+- [Which Distros are avaible](#Avaible Operating Systems)
+
+# Motivation
+
+
 Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
 
 # Install:
@@ -57,7 +71,7 @@ For ansible, have a look at upstream doc https://github.com/ceph/ceph-ansible
 
 Have a look on the roadmap board under github Projects.
 
-# Supported/Avaible Operating Systems
+# Avaible Operating Systems
 
 You can use following OS-images.
 Note: We are providing the OS-images, feel free to fix/expand the terraform files and relative modules.
@@ -76,6 +90,7 @@ Note: We are providing the OS-images, feel free to fix/expand the terraform file
 | Gentoo                       |            |                    | :no_entry:        |
 
 There are Linux Entreprise System however this images are not open to community.
+
 # Contributing:
 
 Take a look on [contributing](CONTRIBUTING.md)

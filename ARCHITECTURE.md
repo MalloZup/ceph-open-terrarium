@@ -1,5 +1,12 @@
 # Design Architecture:
 
+This project doesn't mix deployment with config management. 
+ 
+So you will be able to do `terraform apply` for preparing your KVM instances. 
+ 
+Then you will use the config management of your choice for setup `ceph` (saltstack/ansible) 
+
+
 ## Components:
 
 This project uses the following components:

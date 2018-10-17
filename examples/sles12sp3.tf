@@ -37,7 +37,7 @@ resource "libvirt_domain" "sles12sp3" {
   name      = "sles12sp3-${count.index}"
   memory    = "1024"
   vcpu      = 1
-  count     = 4
+  count     = "{var.count}"
   cloudinit = "${module.cloudinit.cloudinit_id}"
 
   network_interface {

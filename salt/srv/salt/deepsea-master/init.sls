@@ -3,8 +3,8 @@ include:
 
 ses5_pool_repo:
   file.managed:
-    - name: /etc/zypp/repos.d/ses-5-x86_64-pool.repo
-    - source: salt://repos/repos.d/ses-5-x86_64-pool.repo
+    - name: /etc/zypp/repos.d/SES-5-x86_64-pool.repo
+    - source: salt://repos/repos.d/SES-5-x86_64-pool.repo
   
 
 ses5_update_repo:

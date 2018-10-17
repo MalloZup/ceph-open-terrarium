@@ -9,7 +9,6 @@
 
 ## Table of Content
 
-- [Motivation](#motivation)
 - [Install](#install)
 - [Examples](#examples)
 - [Design Architecture of Project](#design-Architecture)
@@ -18,10 +17,13 @@
 - [Contributing](#contributing)
 - [Opensource Distros Supported](#avaible_operating_systems)
 
-# Motivation
 
+With Ceph-open-terrarium you deploy a ceph cluster with terraform `backends` and provisioning with config management tools.
 
-Ceph-open-terrarium lets deploy a ceph cluster on libvirt-kvm via terraform with saltstack or ansible or any other config mgmt tool.
+Currently we support following terraform `backends`:
+*  `libvirt` terraform-plugin. (https://github.com/dmacvicar/terraform-provider-libvirt)
+
+Once you deployed you can provision your infrastructure with saltstack or ansible.
 
 # Install:
 

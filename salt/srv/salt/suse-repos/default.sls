@@ -4,13 +4,13 @@
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/openSUSE-Leap-42.3-Pool.repo
-    - source: salt://repos/repos.d/openSUSE-Leap-42.3-Pool.repo
+    - source: salt://suse-repos/repos.d/openSUSE-Leap-42.3-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/openSUSE-Leap-42.3-Update.repo
-    - source: salt://repos/repos.d/openSUSE-Leap-42.3-Update.repo
+    - source: salt://suse-repos/repos.d/openSUSE-Leap-42.3-Update.repo
     - template: jinja
 {% endif %} {# grains['osrelease'] == '42.3' #}
 
@@ -20,13 +20,13 @@ os_update_repo:
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-11-SP4-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SLE-11-SP4-x86_64-Pool.repo
+    - source: salt://suse-repos/repos.d/SLE-11-SP4-x86_64-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-11-SP4-x86_64-Update.repo
-    - source: salt://repos/repos.d/SLE-11-SP4-x86_64-Update.repo
+    - source: salt://suse-repos/repos.d/SLE-11-SP4-x86_64-Update.repo
     - template: jinja
 
 {% endif %} {# grains['osrelease'] == '11.4' #}
@@ -37,13 +37,13 @@ os_update_repo:
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SLE-12-x86_64-Pool.repo
+    - source: salt://suse-repos/repos.d/SLE-12-x86_64-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-x86_64-Update.repo
-    - source: salt://repos/repos.d/SLE-12-x86_64-Update.repo
+    - source: salt://suse-repos/repos.d/SLE-12-x86_64-Update.repo
     - template: jinja
 
 {% elif grains['osrelease'] == '12.1' %}
@@ -51,13 +51,13 @@ os_update_repo:
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-SP1-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SLE-12-SP1-x86_64-Pool.repo
+    - source: salt://suse-repos/repos.d/SLE-12-SP1-x86_64-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-SP1-x86_64-Update.repo
-    - source: salt://repos/repos.d/SLE-12-SP1-x86_64-Update.repo
+    - source: salt://suse-repos/repos.d/SLE-12-SP1-x86_64-Update.repo
     - template: jinja
 
 {% elif grains['osrelease'] == '12.2' %}
@@ -65,13 +65,13 @@ os_update_repo:
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-SP2-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SLE-12-SP2-x86_64-Pool.repo
+    - source: salt://suse-repos/repos.d/SLE-12-SP2-x86_64-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-SP2-x86_64-Update.repo
-    - source: salt://repos/repos.d/SLE-12-SP2-x86_64-Update.repo
+    - source: salt://suse-repos/repos.d/SLE-12-SP2-x86_64-Update.repo
     - template: jinja
 
 {% elif grains['osrelease'] == '12.3' %}
@@ -79,13 +79,13 @@ os_update_repo:
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-SP3-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SLE-12-SP3-x86_64-Pool.repo
+    - source: salt://suse-repos/repos.d/SLE-12-SP3-x86_64-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-12-SP3-x86_64-Update.repo
-    - source: salt://repos/repos.d/SLE-12-SP3-x86_64-Update.repo
+    - source: salt://suse-repos/repos.d/SLE-12-SP3-x86_64-Update.repo
     - template: jinja
 
 {% endif %}
@@ -97,13 +97,13 @@ os_update_repo:
 os_pool_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-15-x86_64-Pool.repo
-    - source: salt://repos/repos.d/SLE-15-x86_64-Pool.repo
+    - source: salt://suse-repos/repos.d/SLE-15-x86_64-Pool.repo
     - template: jinja
 
 os_update_repo:
   file.managed:
     - name: /etc/zypp/repos.d/SLE-15-x86_64-Update.repo
-    - source: salt://repos/repos.d/SLE-15-x86_64-Update.repo
+    - source: salt://suse-repos/repos.d/SLE-15-x86_64-Update.repo
     - template: jinja
 
 {% endif %} {# '15' in grains['osrelease'] #}

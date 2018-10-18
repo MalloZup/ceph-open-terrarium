@@ -1,5 +1,6 @@
 include:
 - networking-prerequisites.hostname
+- suse-repos
 
 # In case of other distros feel free to expand the grains
 {% if grains['os'] == 'SUSE' %}

@@ -1,1 +1,1 @@
-deepsea-master-ip: 192.168.122.210
+deepsea-master-ip: 192.168.122.54

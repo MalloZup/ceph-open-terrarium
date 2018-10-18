@@ -1,7 +1,7 @@
 base:
   '*':
-   - networking-prerequisites
    - suse-repos
+   - networking-prerequisites
   'salt-master*':
     - deepsea-master
   'salt-minion*':

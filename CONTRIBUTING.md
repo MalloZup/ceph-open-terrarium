@@ -1,5 +1,36 @@
 # How to contribute.
 
+This guide will show you how to contribute on this project.
+
+# Contribute on other tools:
+
+You can contribute on the single terraform-provider used or also on the software components used by this project :).
+
+# Contribute on saltstack states:
+
+If you want to contribute on saltstack states, as golden rule try don't use `cmd.run` when possible use official states.
+
+
+# Contribute on terraform
+
+If you want to create a new backend for terraform like use `cloud`, `vmware` etc, follow this rules:
+
+* Add a new dir for modules needed from backend.
+
+` terraform/openstack/`
+
+* Create images modules (only).
+
+* Separate provisioning from deploy. 
+( the backend should only deploy, with no scripts execution, this is saltstack or ansible job).
+
+* Use upstream images (openSUSE, Fedora, Ubuntu, Debian, etc).
+
+* Add documentation and examples. 
+
+ For examples add e.g `examples/openstack` if you are doing the openstack backend.
+
+
 # Extending images modules:
 
 When you add a new module, take care to add examples and documentation for it.

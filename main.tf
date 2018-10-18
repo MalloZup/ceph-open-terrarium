@@ -3,60 +3,41 @@ provider "libvirt" {
 }
 
 module "cloudinit" {
-  source             = "./terraform/libvirt/images/cloudinit"
-  unique_name        = "sles12sp3_jeos_cloudinit.iso"
-  cloudinit_filename = "cloud_init_resize.cfg"
+  source      = "./terraform/libvirt/images/cloudinit"
+  unique_name = "ubuntu_cloudinit.iso"
 }
 
-module "sles" {
-  source = "./terraform/libvirt/images/sles/"
+module "ubuntu" {
+  source = "./terraform/libvirt/images/ubuntu/"
 }
 
-// 4 mininon and 1 salt-master
-variable "count" {
-  default = 5
-}
+// we create 4 hosts 
 
-resource "libvirt_volume" "osd_disks" {
-  pool   = "default"
-  format = "raw"
-  name   = "osd_${count.index}_data.raw"
-  size   = 100000000
-  count  = "${var.count}"
-}
-
-resource "libvirt_volume" "sles12sp3_disk" {
-  name           = "sles12sp3-${count.index}"
-  base_volume_id = "${module.sles.sles_12_sp3_id}"
+resource "libvirt_volume" "ubuntu_disk" {
+  name           = "ubuntu1804-${count.index}"
+  base_volume_id = "${module.ubuntu.ubuntu_1804_id}"
   pool           = "default"
-  count          = "${var.count}"
-  size           = 5361393152
+  count          = 1
 }
 
-resource "libvirt_domain" "sles12sp3" {
-  name      = "sles12sp3-${count.index}"
+resource "libvirt_domain" "ubuntu1804" {
+  name      = "ubuntu1804-${count.index}"
   memory    = "1024"
   vcpu      = 1
-  count     = "${var.count}"
+  count     = 1
   cloudinit = "${module.cloudinit.cloudinit_id}"
 
   network_interface {
-    network_name   = "default"
-    wait_for_lease = true
+    network_name = "default"
   }
 
-  // OS image
   disk {
-    volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
-  }
-
-  // DISK
-  disk {
-    volume_id = "${element(libvirt_volume.osd_disks.*.id, count.index)}"
+    volume_id = "${element(libvirt_volume.ubuntu_disk.*.id, count.index)}"
   }
 
   # IMPORTANT
-  # you need to pass the console because the image JESO is expecting it as kernel-param.
+  # Ubuntu can hang if an isa-serial is not present at boot time.
+  # If you find your CPU 100% and never is available this is why
   console {
     type        = "pty"
     target_port = "0"
@@ -73,9 +54,5 @@ resource "libvirt_domain" "sles12sp3" {
     type        = "spice"
     listen_type = "address"
     autoport    = true
-  }
-
-  provisioner "local-exec" {
-    command = "echo ${self.network_interface.0.addresses.0} >> hosts.txt"
   }
 }

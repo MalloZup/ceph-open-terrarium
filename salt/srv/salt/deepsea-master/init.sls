@@ -1,16 +1,5 @@
 include:
-  - repos
-
-ses5_pool_repo:
-  file.managed:
-    - name: /etc/zypp/repos.d/SES-5-x86_64-pool.repo
-    - source: salt://repos/repos.d/SES-5-x86_64-pool.repo
-  
-
-ses5_update_repo:
-  file.managed:
-    - name: /etc/zypp/repos.d/SES-5-x86_64-Update.repo
-    - source: salt://repos/repos.d/SES-5-x86_64-Update.repo
+  - suse-repos
 
 master_minions_pillar:
   file.managed:
@@ -43,7 +32,6 @@ deepsea_policy:
     - source: salt://deepsea-master/policy.cfg
     - require:
       - file: create_proposal_folder
-
 
 salt-master:
   pkg.installed:

@@ -2,14 +2,12 @@
 
 # we call this script inside the .ci dir
 
-set -e
-LIBVIRT_DEFAULT_URI="qemu:///system"
+set -ex
 
-cd ..
+cd examples/
 if [ `terraform fmt | wc -c` -ne 0 ]; then echo "terraform files need be formatted! run terraform fmt!"; exit 1; fi
-cd .ci/
+cd libvirt
 
-cd ../examples/libvirt
 for file in "."/*
 do
   if [ ! -d "$file" ]; then
@@ -17,7 +15,8 @@ do
 	cp $file ../../main.tf
 	cd ../..
 	terraform init
-#	terraform validate
-	cd examples
+	# validate libvirt examples
+	echo $PWD
+	cd examples/libvirt
   fi
 done

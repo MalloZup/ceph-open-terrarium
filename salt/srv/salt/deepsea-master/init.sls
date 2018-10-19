@@ -3,7 +3,7 @@ include:
 
 master_minions_pillar:
   file.managed:
-    - name: /srv/pillar/ceph/deepsea_minions.sls,
+    - name: /srv/pillar/ceph/deepsea_minions.sls
     - source: salt://deepsea-master/deepsea_minion.sls
     - require:
       - pkg: deepsea_packages

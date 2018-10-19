@@ -1,10 +1,17 @@
 include:
   - suse-repos
 
-master_minions_pillar:
+deepsea_minion_pillar:
   file.managed:
     - name: /srv/pillar/ceph/deepsea_minions.sls
     - source: salt://deepsea-master/deepsea_minion.sls
+    - require:
+      - pkg: deepsea_packages
+
+master_minions_pillar:
+  file.managed:
+    - name: /srv/pillar/ceph/master_minion.sls
+    - source: salt://deepsea-master/master_minion.sls
     - require:
       - pkg: deepsea_packages
 

@@ -27,8 +27,6 @@ hosts_file:
   cmd.script:
     - name: salt://networking-prerequisites/set_ip_in_etc_hosts.py.jinja
     - args: "{{ grains['id'] }}"
-    - user: root
-    - shell: True
     - template: jinja
     - context:
     {% if grains.get('osmajorrelease', None)|int() == 15 %}

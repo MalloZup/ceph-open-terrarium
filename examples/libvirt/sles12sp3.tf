@@ -56,7 +56,7 @@ resource "libvirt_domain" "sles12sp3" {
   }
 
   # IMPORTANT
-  # you need to pass the console because the image JESO is expecting it as kernel-param.
+  # you need to pass the console because the image JEOS is expecting it as kernel-param.
   console {
     type        = "pty"
     target_port = "0"

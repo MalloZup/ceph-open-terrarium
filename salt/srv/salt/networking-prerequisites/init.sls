@@ -21,3 +21,18 @@ enable_ntpd:
     - running: True
     - require:
       - pkg: ntp_package
+
+
+hosts_file:
+  cmd.script:
+    - name: salt://default/set_ip_in_etc_hosts.py.jinja
+    - args: "{{ grains['id'] }}"
+    - user: root
+    - shell: True
+    - template: jinja
+    - context:
+    {% if grains.get('osmajorrelease', None)|int() == 15 %}
+      pythonexec: python3
+    {% else %}
+      pythonexec: python
+{% endif %}

@@ -8,11 +8,11 @@ module "centos" {
 
 module "cloudinit" {
   source      = "./terraform/libvirt/images/cloudinit"
-  unique_name = "cento7_jeos_cloudinit.iso"
+  unique_name = "centos7_cloudinit.iso"
 }
 
 resource "libvirt_volume" "centos_disk" {
-  name           = "opensuse423-${count.index}"
+  name           = "centos7-${count.index}"
   base_volume_id = "${module.centos.centos_7_id}"
   pool           = "default"
   count          = 1

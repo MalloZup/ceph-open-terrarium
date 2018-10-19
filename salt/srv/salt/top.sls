@@ -4,5 +4,6 @@ base:
    - networking-prerequisites
   'salt-master*':
     - deepsea-master
+    - salt-minion
   'salt-minion*':
     - salt-minion

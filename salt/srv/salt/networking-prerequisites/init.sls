@@ -25,7 +25,7 @@ enable_ntpd:
 
 hosts_file:
   cmd.script:
-    - name: salt://default/set_ip_in_etc_hosts.py.jinja
+    - name: salt://networking-prerequisites/set_ip_in_etc_hosts.py.jinja
     - args: "{{ grains['id'] }}"
     - user: root
     - shell: True

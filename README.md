@@ -75,15 +75,15 @@ Note: We are providing the OS-images, feel free to fix/expand the terraform file
 **Requirements:** For adding an OS on the table we need a cloud-image avaible upstream.
 
 
-| Operating System             | Version    |  Avaible           | To be supported (see requirements) | Backend    |
-| ---------------------------- | :--------: | :----------------: | :---------------: | libvirt    |
-| Arch                         | latest     | :heavy_check_mark: |                   | libvirt    |
-| openSUSE                     | Leap 42.3  | :heavy_check_mark: |                   | libvirt    |
-| Ubuntu                       | 18.04      | :heavy_check_mark: |                   | libvirt    |
-| CentOS                       | 7.1        | :heavy_check_mark: |                   | libvirt    |
-| Debian                       | 9          | :heavy_check_mark: |                   | libvirt    |
-| Fedora                       | 28         | :heavy_check_mark: |                   | libvirt    |
-| Gentoo                       |            |                    | :no_entry:        | libvirt    |
+| Operating System             | Version    |  Avaible           | To be supported | Providers  |
+| ---------------------------- | :--------: | :----------------: | :-------------: | :--------: |
+| Arch                         | latest     | :heavy_check_mark: |                 | libvirt    |
+| openSUSE                     | Leap 42.3  | :heavy_check_mark: |                 | libvirt    |
+| Ubuntu                       | 18.04      | :heavy_check_mark: |                 | libvirt    |
+| CentOS                       | 7.1        | :heavy_check_mark: |                 | libvirt    |
+| Debian                       | 9          | :heavy_check_mark: |                 | libvirt    |
+| Fedora                       | 28         | :heavy_check_mark: |                 | libvirt    |
+| Gentoo                       |            |                    | :no_entry:      | libvirt    |
 
 There are Linux Entreprise System however this images are not open to community.
 

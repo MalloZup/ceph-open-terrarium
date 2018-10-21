@@ -40,12 +40,18 @@ You need this on your `main.tf` file ( this is present for example in `sles12sp3
 
 # Deepsea:
 
+| Supported Operating System | Version |
+| :------------------------- | :------ |
+| SLES                       | 12sp3   |
+| openSUSE                   | 42.3    |
+
+
 For infos about Deepsea have a look at upstream doc:
 
  https://github.com/SUSE/DeepSea
 
 
-### Usefull commands
+### Useful commands
 Here some example basic what you can do with deepsea:
 
 get the adress ip of salt-master with:

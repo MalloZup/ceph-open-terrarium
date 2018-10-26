@@ -9,7 +9,7 @@ import sys
 
 DEFAULT_ROSTER_FILE = "etc/salt/roster"
 DEFAULT_MASTER_PILLAR_FILE = "srv/pillar/master_ip.sls"
-DEFAULT_MINION_PILLAR_FILE = "srv/pillar/minions_ips.sls"
+DEFAULT_MINION_PILLAR_FILE = "srv/pillar/salt-minions.sls"
 TERRAFORM_HOSTS_FILE = "../hosts.txt"
 
 
@@ -58,7 +58,8 @@ def write_salt_minion_pillar_entry(pillar_file, host, minion_num):
     :param host: the ip address or hostname of the salt minion
     :param minion_num: the minion number to add
     """
-    pillar_file.write("salt-minion{0}: {1}\n".format(minion_num, host))
+    pillar_file.write("salt-minions:\n")
+    pillar_file.write(" salt-minion{0}: {1}\n".format(minion_num, host))
 
 
 def write_pillar(pillar_file, master_ip):

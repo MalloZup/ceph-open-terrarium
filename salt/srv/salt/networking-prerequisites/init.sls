@@ -34,3 +34,16 @@ hosts_file:
     {% else %}
       pythonexec: python
 {% endif %}
+
+
+hosts_ips:
+  file.append:
+    - name: /etc/hosts
+    - text: 
+      # do for loop and get name
+      #     {{  }} : {{ pillar['minions_ips']}}
+      {% for minion_name, minion_ip in pillar.get('salt-minions', {}).items() %}
+      {{ minion_name }} {{ minion_ip }}
+      {% endfor %}
+    - require:
+      - pkg: salt-minion

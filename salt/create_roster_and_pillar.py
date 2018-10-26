@@ -8,7 +8,8 @@ import os
 import sys
 
 DEFAULT_ROSTER_FILE = "etc/salt/roster"
-DEFAULT_PILLAR_FILE = "srv/pillar/master_ip.sls"
+DEFAULT_MASTER_PILLAR_FILE = "srv/pillar/master_ip.sls"
+DEFAULT_MINION_PILLAR_FILE = "srv/pillar/minions_ips.sls"
 TERRAFORM_HOSTS_FILE = "../hosts.txt"
 
 
@@ -49,6 +50,16 @@ def write_salt_minion_entry(roster_file, host, minion_num):
     roster_file.write("   user: root\n")
     roster_file.write("   host: {}\n".format(host))
 
+def write_salt_minion_pillar_entry(pillar_file, host, minion_num):
+    """
+    Writes a salt minion entry to the specified roster file.
+
+    :param pillar_file: a file object to add the entry to
+    :param host: the ip address or hostname of the salt minion
+    :param minion_num: the minion number to add
+    """
+    pillar_file.write("salt-minion{0}: {1}\n".format(minion_num, host))
+
 
 def write_pillar(pillar_file, master_ip):
     """
@@ -82,16 +93,19 @@ def main():
         sys.exit(1)
 
     master_ip = ips.pop()
-    # created dynamic pillar
-
-    with open(DEFAULT_PILLAR_FILE, "w") as pillar:
-        write_pillar(pillar, master_ip)
+    # create dynamic pillar for master ip
+    with open(DEFAULT_MASTER_PILLAR_FILE, "w") as master_pillar:
+        write_pillar(master_pillar, master_ip)
     # create dynamic roster
     with open(DEFAULT_ROSTER_FILE, "a") as roster:
         # take first as master
         write_salt_master_entry(roster, master_ip)
         for minion_number, host in enumerate(ips):
             write_salt_minion_entry(roster, host, minion_number + 1)
+    # create dyn pillar for minions ips
+    with open(DEFAULT_MINION_PILLAR_FILE, "w") as pillar:
+        for minion_number, host in enumerate(ips):
+            write_salt_minion_pillar_entry(pillar, host, minion_number + 1)
 
     # remove host file (don't needed anymore)
     if os.path.exists(TERRAFORM_HOSTS_FILE):

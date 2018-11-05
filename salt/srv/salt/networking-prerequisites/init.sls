@@ -22,28 +22,21 @@ enable_ntpd:
     - require:
       - pkg: ntp_package
 
-
-hosts_file:
-  cmd.script:
-    - name: salt://networking-prerequisites/set_ip_in_etc_hosts.py.jinja
-    - args: "{{ grains['id'] }}"
-    - template: jinja
-    - context:
-    {% if grains.get('osmajorrelease', None)|int() == 15 %}
-      pythonexec: python3
-    {% else %}
-      pythonexec: python
-{% endif %}
-
-
-hosts_ips:
+hosts_minions_ips:
   file.append:
     - name: /etc/hosts
     - text: 
-      # do for loop and get name
-      #     {{  }} : {{ pillar['minions_ips']}}
       {% for minion_name, minion_ip in pillar.get('salt-minions', {}).items() %}
-      {{ minion_name }} {{ minion_ip }}
+        {{ minion_ip }} {{ minion_name }}
       {% endfor %}
     - require:
       - pkg: salt-minion
+
+hosts_master_ip:
+  file.append:
+    - name: /etc/hosts
+    - text: 
+        {{ salt['pillar.get']('deepsea-master-ip') }} salt-master
+    - require:
+      - pkg: salt-minion
+      - file: hosts_minions_ips

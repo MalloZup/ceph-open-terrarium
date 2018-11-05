@@ -58,7 +58,6 @@ def write_salt_minion_pillar_entry(pillar_file, host, minion_num):
     :param host: the ip address or hostname of the salt minion
     :param minion_num: the minion number to add
     """
-    pillar_file.write("salt-minions:\n")
     pillar_file.write(" salt-minion{0}: {1}\n".format(minion_num, host))
 
 
@@ -105,6 +104,7 @@ def main():
             write_salt_minion_entry(roster, host, minion_number + 1)
     # create dyn pillar for minions ips
     with open(DEFAULT_MINION_PILLAR_FILE, "w") as pillar:
+        pillar.write("salt-minions:\n")
         for minion_number, host in enumerate(ips):
             write_salt_minion_pillar_entry(pillar, host, minion_number + 1)
 

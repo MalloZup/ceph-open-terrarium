@@ -45,12 +45,12 @@ resource "libvirt_domain" "sles12sp3" {
     wait_for_lease = true
   }
 
-  // OS image
+  // Disk containing OS
   disk {
     volume_id = "${element(libvirt_volume.sles12sp3_disk.*.id, count.index)}"
   }
 
-  // DISK
+  // Empty DISK data
   disk {
     volume_id = "${element(libvirt_volume.osd_disks.*.id, count.index)}"
   }

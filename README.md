@@ -1,6 +1,5 @@
 # Ceph-open-terrarium
 
-Under Active development
 <img src=".doc/pictures/terrarium.jpg" width=250px height=250px>
 
 
